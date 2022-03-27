@@ -46,10 +46,10 @@
                 <circle v-if="!jt" :cx="ccx" :cy="ccy" r="150" fill="#222222" stroke="#333333"/>
                 <circle v-if="!jt" clip-path="url('#clip1')" :cx="ccx" :cy="ccy" r="150" fill="#8080ff" stroke="#000080"/> 
                 
-                <circle v-if="dot" v-for="el in pts" :cx='el.x'  :cy='el.y' r="2" fill="blue"/>
-                <circle v-if="dot" clip-path="url('#clip1')" v-for="el in pts" :cx='el.x'  :cy='el.y' r="3" fill="red"/>
-                <circle v-if="ldot" v-for="el in ldpts" :cx='el.x'  :cy='el.y' r="2" fill="blue"/>
-                <circle v-if="ldot" clip-path="url('#clip1')" v-for="el in ldpts" :cx='el.x'  :cy='el.y' r="3" fill="red"/>
+                <circle v-if="dot" v-for="el in pts" :cx='el.x'  :cy='el.y' r="2" fill="#2d7f9d"/>
+                <circle v-if="dot" clip-path="url('#clip1')" v-for="el in pts" :cx='el.x'  :cy='el.y' r="3" fill="#ce2029"/>
+                <circle v-if="ldot" v-for="el in ldpts" :cx='el.x'  :cy='el.y' r="2" fill="#2d7f9d"/>
+                <circle v-if="ldot" clip-path="url('#clip1')" v-for="el in ldpts" :cx='el.x'  :cy='el.y' r="3" fill="#ce2029"/>
                 
                 <line v-if="jt" x1="200" y1="200" x2="450" y2="450" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
                 <circle v-if="jt" cx="200" cy="200" r="5" fill="blue"/>
@@ -77,17 +77,18 @@
           </div>
       
           <div class="foot-wrap">
+            <button class="next" onclick="location.href='transits.html';"><i class="fas fa-solid fa-chevron-left"></i></button>
             <div class="navbar">
-                <div class="navel"><a href="transits.html">Tr</a></div>
-                <div class="navel"><a href="method.html">Mth</a></div>
-                <div class="navel"><a href="basicsim.html">Mth</a></div>
-                <div class="navel"><a href="data.html">D</a></div>
-                <div class="navel"><a href="search.html">lk</a></div>
-                <div class="navel"><a href="megs.html">Mg</a></div>
-                <div class="navel" onclick="openFullscreen();">F</div>
-                <div class="navel" onclick="closeFullscreen();">nF</div>
+              <div class="navel"><a href="index.html"><i class="fa fa-home"></i></a></div>
+                <div class="navel"><a href="transits.html"><i class="fas fa-solid fa-star"></i></a></div>
+                <div class="navel nav-active"><a href="method.html"><i class="fas fa-solid fa-network-wired"></i></a></div>
+                <div class="navel"><a href="basicsim.html"><i class="fas fa-solid fa-film"></i></a></div>
+                <div class="navel"><a href="data.html"><i class="fas fa-solid fa-scroll"></i></a></div>
+                <div class="navel"><a href="search.html"><i class="fas fa-search"></i></a></div>
+                <div class="navel"><a href="megs.html"><i class="fas fa-solid fa-city"></i></a></div>
             </div>
-            <button class="d-next">Go</button>
+            <div class="credits">Made by: Ushasi Bhowmick</div>
+            <button class="next" onclick="location.href='basicsim.html';"><i class="fas fa-solid fa-chevron-right"></i></button>
         </div>
     </div>
     
@@ -96,4 +97,30 @@
 
 
 <script src='js/method.js' type="text/javascript"></script>
+
+<script>
+  function leftArrowPressed() {
+      console.log("left");
+      location.href='transits.html';
+  }
+
+  function rightArrowPressed() {
+      console.log("right");
+      location.href='basicsim.html';
+  }
+
+  document.onkeydown = function(evt) {
+  evt = evt || window.event;
+  switch (evt.keyCode) {
+      case 37:
+          leftArrowPressed();
+          break;
+      case 39:
+          rightArrowPressed();
+          break;
+  }
+};
+</script>
 </body>
+
+</html>

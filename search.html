@@ -26,30 +26,37 @@
 <div class="s-wrap">
     <div class="s-head">S E A R C H</div>
     <div class="s-nav">
-        <div class="s-nav-el">ex1</div>
-        <div class="s-nav-el">ex2</div>
-        <div class="s-nav-el">ex3</div>
-        <div class="s-nav-el">ex4</div>
+        <div class="s-nav-el" id="box0" @click="choose_plot(0)">KIC 5359701</div>
+        <div class="s-nav-el" id="box1" @click="choose_plot(1)">KIC 8110757</div>
+        <div class="s-nav-el" id="box2" @click="choose_plot(2)">KIC 6372268</div>
     </div>
 
     <div class="s-graph">
         <div class="s-graph-el" id="myPlot"></div>
     </div>
 
-    <div class="s-write"></div>
+    <div class="s-write">
+        <div class="s-write-el">{{hd}}</div>
+        <div class="s-write-el">Rpl: {{rpl}}Rstar</div>
+        <div class="s-write-el">u1: {{u1}}</div>
+        <div class="s-write-el">u2: {{u2}}</div>
+        <div class="s-write-el">Rorb: {{rorb}}Rstar</div>
+        <div class="s-write-el">Impact Parameter: {{b}}Rstar</div>
+    </div>
     
     <div class="foot-wrap">
+        <button class="next" onclick="location.href='data.html';"><i class="fas fa-solid fa-chevron-left"></i></button>
         <div class="navbar">
-            <div class="navel"><a href="transits.html">Tr</a></div>
-            <div class="navel"><a href="method.html">Mth</a></div>
-            <div class="navel"><a href="basicsim.html">Mth</a></div>
-            <div class="navel"><a href="data.html">D</a></div>
-            <div class="navel"><a href="search.html">lk</a></div>
-            <div class="navel"><a href="megs.html">Mg</a></div>
-            <div class="navel" onclick="openFullscreen();">F</div>
-            <div class="navel" onclick="closeFullscreen();">nF</div>
+            <div class="navel"><a href="index.html"><i class="fa fa-home"></i></a></div>
+            <div class="navel"><a href="transits.html"><i class="fas fa-solid fa-star"></i></a></div>
+            <div class="navel"><a href="method.html"><i class="fas fa-solid fa-network-wired"></i></a></div>
+            <div class="navel"><a href="basicsim.html"><i class="fas fa-solid fa-film"></i></a></div>
+            <div class="navel"><a href="data.html"><i class="fas fa-solid fa-scroll"></i></a></div>
+            <div class="navel nav-active"><a href="search.html"><i class="fas fa-search"></i></a></div>
+            <div class="navel"><a href="megs.html"><i class="fas fa-solid fa-city"></i></a></div>
         </div>
-        <button class="d-next">Go</button>
+        <div class="credits">Made by: Ushasi Bhowmick</div>
+        <button class="next" onclick="location.href='megs.html';"><i class="fas fa-solid fa-chevron-right"></i></button>
     </div>
 </div>
 
@@ -60,4 +67,28 @@
 
 
 <script src='js/search.js' type="text/javascript"></script>
+
+<script>
+    function leftArrowPressed() {
+        console.log("left");
+        location.href='data.html';
+    }
+  
+    function rightArrowPressed() {
+        console.log("right");
+        location.href='megs.html';
+    }
+  
+    document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+    }
+  };
+  </script>
 </body>

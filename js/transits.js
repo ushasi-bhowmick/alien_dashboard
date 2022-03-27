@@ -2,7 +2,7 @@ var transit = new Vue({
 	el: '#tr-js-area',
 
 	data: {
-        animpath:"images/temp1.gif",
+        animpath:"images/letsgo.gif",
         sel:[1,1,0,0]
 	},
 
@@ -20,20 +20,20 @@ var transit = new Vue({
 
         load_animation() {
             if(this.sel[0] && this.sel[1] && !this.sel[2] && !this.sel[3]) {
-                this.animpath="images/temp1.gif"; 
-                this.run_plot('csv/2d3d_0.2R_circ.csv');
+                this.animpath="images/letsgo.gif"; 
+                this.run_plot('csv/2d3d_0.2R_circ_corr.csv');
             }
             else if(this.sel[0] && this.sel[1] && this.sel[2] && !this.sel[3]) {
-                this.animpath="images/temp3.gif";
-                this.run_plot('csv/2d3d_0.2R_limb_circ.csv');
+                this.animpath="images/letsgo.gif";
+                this.run_plot('csv/2d3d_0.2R_limb_circ_corr.csv');
             }
             else if(this.sel[0] && this.sel[1] && !this.sel[2] && this.sel[3]) {
-                this.animpath="images/temp2.gif";
-                this.run_plot('csv/2d3d_0.2R_kep.csv');
+                this.animpath="images/letsgo4.gif";
+                this.run_plot('csv/2d3d_0.2R_kep_corr.csv');
             }
             else if(this.sel[0] && this.sel[1] && this.sel[2] && this.sel[3]) {
-                this.animpath="images/temp4.gif";
-                this.run_plot('csv/2d3d_0.2R_limb_kep.csv');
+                this.animpath="images/letsgo4.gif";
+                this.run_plot('csv/2d3d_0.2R_limb_kep_corr.csv');
             }
         },
 
@@ -46,7 +46,7 @@ var transit = new Vue({
             for(i=0;i<rows.length;i++) {
                 d2.push(parseFloat(rows[i]['2d']))
                 d3.push(parseFloat(rows[i]['3d']))
-                frm.push(parseFloat(rows[i]['#frame']))
+                frm.push(parseFloat(rows[i]['frame'])/3.1415)
                 res.push(parseFloat(rows[i]['2d'])-parseFloat(rows[i]['3d']))
             }
       
@@ -56,8 +56,7 @@ var transit = new Vue({
                 x:frm,
                 y:d3,
                 mode:"lines",
-                name:"3d",
-                line: {color: '#445566', width: 2, shape: 'spline'}
+                line: {color: '#77dd77', width: 3, shape: 'spline'}
       
             } 
             var data = [trace3d];
@@ -72,9 +71,9 @@ var transit = new Vue({
                     pad: 4
                 },
                 grid:{rows:1, columns:1,pattern: 'independent',roworder: ' top to bottom', ygap:0.2},
-                xaxis: {range: [Math.min(frm), Math.max(frm)], showgrid: false, showline:true,
+                xaxis: {range: [Math.min(frm), Math.max(frm)], title:"Phase" ,showgrid: false, showline:true,
                      mirror: true},
-                yaxis: {range: [1.1*Math.min(d2),1.1*Math.max(d2)], title: "Price in Millions", showgrid: false ,
+                yaxis: {range: [1.1*Math.min(d2),1.1*Math.max(d2)], title: "Flux", showgrid: false ,
                 showline:true, mirror: true}, 
                 font:{family:"Open Sans", color:"#CCCCCC"},
                 plot_bgcolor:"black",
@@ -93,8 +92,14 @@ var transit = new Vue({
 	},
 
 	mounted() {
+        window.addEventListener('keydown', (e) => {
+            if (e.key == 6) {
+              console.log('click');
+            }
+        });
+
 		console.log('here');
-        this.run_plot('csv/2d3d_0.2R_circ.csv');
+        this.run_plot('csv/2d3d_0.2R_circ_corr.csv');
 		
 	},
 

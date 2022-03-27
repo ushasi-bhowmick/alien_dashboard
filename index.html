@@ -18,15 +18,59 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/b629a77575.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet">
 </head>
 
 <!--lets see if Ive got the guts to pull this off-->
 
 <body>
 
+<div class="i-backgrid">
+    <div class="i-pic i-p1"></div>
+    <div class="i-pic i-p2"></div>
+    <div class="i-pic i-p3"></div>
+    <div class="i-pic i-p4"></div>
+    <div class="i-pic i-p5"></div>
+    <div class="i-pic i-p6"></div>
+</div>
+
+<div class="i-frontgrid">
+    <div class="i-title">W E I R D S I G N A L S</div>
+    <div class="i-navbar">
+        <div class="i-navel"><a href="transits.html"><i class="fas fa-solid fa-star"></i></a> Transit</div>
+        <div class="i-navel"><a href="method.html"><i class="fas fa-solid fa-network-wired"></i></a> Method</div>
+        <div class="i-navel"><a href="basicsim.html"><i class="fas fa-solid fa-film"></i></a> Simulation</div>
+        <div class="i-navel"><a href="data.html"><i class="fas fa-solid fa-scroll"></i></a> Results</div>
+        <div class="i-navel"><a href="search.html"><i class="fas fa-search"></i></a> Search</div>
+        <div class="i-navel"><a href="megs.html"><i class="fas fa-solid fa-city"></i></a> Megastructures</div>
+    </div>
+</div>
 
 
 <script src='js/index.js' type="text/javascript"></script>
+
+<script>
+    function leftArrowPressed() {
+        console.log("left");
+    }
+
+    function rightArrowPressed() {
+        console.log("right");
+        location.href='transits.html';
+    }
+
+    document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+    }
+};
+</script>
 </body>
 
 

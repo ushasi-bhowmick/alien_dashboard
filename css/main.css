@@ -76,7 +76,7 @@ a:visited {
     height:5vw;
     display: flex;
     justify-content: flex-start;
-    width:70%;
+    width:50%;
     align-items: center;
 }
 
@@ -92,5 +92,37 @@ a:visited {
 }
 
 .navel:hover {
-    background-color:rgba(255, 255, 255, 0.2);
+    background-color:rgba(147, 226, 236, 0.5);
+}
+
+.nav-active {
+    background-color:rgb(55, 41, 77) !important;
+}
+
+.next {
+    height:4vw;
+    width:4vw;
+    border-radius: 50%;
+    background:none;
+    color: white;
+    border: solid 1px white;
+}
+
+.next:hover {
+    outline:none;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.next:active {
+    outline:none;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.credits {
+    width: 30%;
+    display: flex;
+    height: 5vw;
+    font-size:2vh;
+    justify-content: center;
+    align-items: flex-end;
 }

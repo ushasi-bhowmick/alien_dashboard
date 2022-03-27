@@ -17,43 +17,47 @@ var data = new Vue({
 	el: '#data-js-area',
 
 	data: {
-    
+    now:0
 	},
 
 	methods: {
 
     choose_plot(i) {
       if(i==0) {
-        $('#box0').addClass('t-par-on');
-        $('#box1').removeClass('t-par-on');
-        $('#box2').removeClass('t-par-on');
-        $('#box3').removeClass('t-par-on');
+        this.now=0;
+        $('#box0').addClass('d-par-on');
+        $('#box1').removeClass('d-par-on');
+        $('#box2').removeClass('d-par-on');
+        $('#box3').removeClass('d-par-on');
         this.run_plot('csv/2d3d_0.1R_circ.csv')
       }
 
       else if(i==1) {
-        $('#box1').addClass('t-par-on');
-        $('#box0').removeClass('t-par-on');
-        $('#box2').removeClass('t-par-on');
-        $('#box3').removeClass('t-par-on');
+        this.now=1;
+        $('#box1').addClass('d-par-on');
+        $('#box0').removeClass('d-par-on');
+        $('#box2').removeClass('d-par-on');
+        $('#box3').removeClass('d-par-on');
         this.run_plot('csv/2d3d_0.1R_kep.csv')
 
       }
 
       else if(i==2) {
-        $('#box2').addClass('t-par-on');
-        $('#box1').removeClass('t-par-on');
-        $('#box0').removeClass('t-par-on');
-        $('#box3').removeClass('t-par-on');
+        this.now=2;
+        $('#box2').addClass('d-par-on');
+        $('#box1').removeClass('d-par-on');
+        $('#box0').removeClass('d-par-on');
+        $('#box3').removeClass('d-par-on');
         this.run_plot('csv/2d3d_0.1R_limb_circ.csv')
 
       }
 
       else {
-        $('#box3').addClass('t-par-on');
-        $('#box1').removeClass('t-par-on');
-        $('#box2').removeClass('t-par-on');
-        $('#box0').removeClass('t-par-on');
+        this.now=3;
+        $('#box3').addClass('d-par-on');
+        $('#box1').removeClass('d-par-on');
+        $('#box2').removeClass('d-par-on');
+        $('#box0').removeClass('d-par-on');
         this.run_plot('csv/2d3d_0.1R_limb_kep.csv')
 
       }
@@ -79,14 +83,14 @@ var data = new Vue({
       y:d2,
       mode:"lines",
       name:"2d",
-      line: {color: 'green', width: 2, shape: 'spline'}
+      line: {color: '#00693e', width: 2, shape: 'spline'}
     }
     var trace3d ={
       x:frm,
       y:d3,
       mode:"lines",
       name:"3d",
-      line: {color: '#445566', width: 2, shape: 'spline'}
+      line: {color: '#77dd77', width: 2, shape: 'spline'}
 
     } 
     var traceRes = {
@@ -96,7 +100,7 @@ var data = new Vue({
       name:"Res",
       xaxis: 'x2',
       yaxis: 'y2',
-      line: {color: '#445566', width: 2, shape: 'spline'}
+      line: {color: '#7cfc00', width: 2, shape: 'spline'}
 
     } 
     var data = [trace2d, trace3d, traceRes];
@@ -105,12 +109,12 @@ var data = new Vue({
     var layout = {
       grid:{rows:2, columns:1,pattern: 'independent',roworder: ' top to bottom', ygap:0.2},
       xaxis: {range: [Math.min(frm), Math.max(frm)], showgrid: false, showline:true, mirror: true},
-      yaxis: {range: [1.1*Math.min(d2),1.1*Math.max(d2)], title: "Price in Millions", showgrid: false ,
+      yaxis: {range: [1.1*Math.min(d2),1.1*Math.max(d2)], title: "Flux", showgrid: false ,
          showline:true, mirror: true}, 
-      xaxis2: {range: [Math.min(frm), Math.max(frm)], title: "Square Meters", showgrid: false, showline:true, mirror: true},
-      yaxis2: {range: [1.1*Math.min(res),1.1*Math.max(res)], title: "Price in Millions", showgrid: false , 
+      xaxis2: {range: [Math.min(frm), Math.max(frm)], title: "Phase", showgrid: false, showline:true, mirror: true},
+      yaxis2: {range: [1.1*Math.min(res),1.1*Math.max(res)], title: "Flux-Model", showgrid: false , 
         showline:true, mirror: true}, 
-      title: "House Prices vs. Size",
+      title: "Transit of 2D vs 3D objects",
       font:{family:"Open Sans", color:"#CCCCCC"},
       plot_bgcolor:"black",
       paper_bgcolor:"black"
@@ -131,7 +135,17 @@ var data = new Vue({
 
 	mounted() {
 		console.log('there');
-    this.run_plot('csv/2d3d_0.1R_circ.csv');    
+    this.choose_plot(0);  
+    window.addEventListener('keydown', (e) => {
+      if (e.key == 2) {
+        console.log('click');
+        if(this.now<3) this.choose_plot(this.now+1);
+      }
+      else if (e.key == 8) {
+        console.log('click');
+        if(this.now>0) this.choose_plot(this.now-1);
+      }
+    });  
 		
 		
 	},

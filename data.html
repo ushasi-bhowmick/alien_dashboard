@@ -39,20 +39,45 @@
       </div>
   
       <div class="foot-wrap">
+        <button class="next" onclick="location.href='basicsim.html';"><i class="fas fa-solid fa-chevron-left"></i></button>
         <div class="navbar">
-            <div class="navel"><a href="transits.html">Tr</a></div>
-            <div class="navel"><a href="method.html">Mth</a></div>
-            <div class="navel"><a href="basicsim.html">Mth</a></div>
-            <div class="navel"><a href="data.html">D</a></div>
-            <div class="navel"><a href="search.html">lk</a></div>
-            <div class="navel"><a href="megs.html">Mg</a></div>
-            <div class="navel" onclick="openFullscreen();">F</div>
-            <div class="navel" onclick="closeFullscreen();">nF</div>
+            <div class="navel"><a href="index.html"><i class="fa fa-home"></i></a></div>
+            <div class="navel"><a href="transits.html"><i class="fas fa-solid fa-star"></i></a></div>
+            <div class="navel"><a href="method.html"><i class="fas fa-solid fa-network-wired"></i></a></div>
+            <div class="navel"><a href="basicsim.html"><i class="fas fa-solid fa-film"></i></a></div>
+            <div class="navel nav-active"><a href="data.html"><i class="fas fa-solid fa-scroll"></i></a></div>
+            <div class="navel"><a href="search.html"><i class="fas fa-search"></i></a></div>
+            <div class="navel"><a href="megs.html"><i class="fas fa-solid fa-city"></i></a></div>
+            
         </div>
-        <button class="d-next">Go</button>
+        <div class="credits">Made by: Ushasi Bhowmick</div>
+        <button class="next" onclick="location.href='search.html';"><i class="fas fa-solid fa-chevron-right"></i></button>
     </div>
 </div>
 
 </div>
 <script src='js/data.js' type="text/javascript"></script>
+<script>
+    function leftArrowPressed() {
+        console.log("left");
+        location.href='basicsim.html';
+    }
+  
+    function rightArrowPressed() {
+        console.log("right");
+        location.href='search.html';
+    }
+  
+    document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    switch (evt.keyCode) {
+        case 37:
+            leftArrowPressed();
+            break;
+        case 39:
+            rightArrowPressed();
+            break;
+    }
+  };
+  </script>
 </body>

@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     grid-template-areas:"head" "one" "foot";
-    grid-template-rows:1fr 4fr 1fr;
+    grid-template-rows:2fr 6fr 1fr;
     background-color: var(--main-bg-color);
     grid-gap:2vh;
 }
@@ -40,11 +40,11 @@
 }
 
 .mg-one {
-    width:40%;
-    height:70vh;
+    width:45%;
+    height:65vh;
     margin:3vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     overflow: hidden;
     background-color: black;
@@ -54,6 +54,16 @@
 .mg-an {
     width: auto;
     height:95%;
+}
+
+.mg-desc {
+    width:auto;
+    height:95%;
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .mg-foot-wrap {

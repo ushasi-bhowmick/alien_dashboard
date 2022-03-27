@@ -101,11 +101,27 @@ var meth = new Vue({
         //for(i=0;i<ldrd.length;i++) {
         //    this.pts.push({x:this.ccx+parseFloat(ldrd[i])*Math.cos(parseFloat(ldth[i])),y:this.ccy+parseFloat(ldrd[i])*Math.sin(parseFloat(ldth[i]))})
         //}
-        this.choose_bar(0)
+        this.choose_bar(0);
+        window.addEventListener('keydown', (e) => {
+            if (e.key == '.') {
+              console.log('click');
+              this.choose_bar(2);
+            }
+            else if(e.key == 'o') {
+                this.choose_bar(1);
+            }
+            else if(e.key == ',') {
+                this.choose_bar(3);
+            }
+            else if(e.key == '/') {
+                this.choose_bar(4);
+            }
+        });
         
 	},
 
 	updated() {
+
         
 	},
 

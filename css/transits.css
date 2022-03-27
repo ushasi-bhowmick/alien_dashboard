@@ -76,7 +76,7 @@
 }
 
 .t-parwrap:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(201, 235, 229, 0.1);
 }
 
 .t-par-on {
@@ -86,7 +86,7 @@
 
 .t-an {
     width: auto;
-    height:60%;
+    height:57%;
 }
 
 
