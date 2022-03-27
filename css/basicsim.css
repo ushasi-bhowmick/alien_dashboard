@@ -1,0 +1,100 @@
+@import "main.css";
+
+.b-wrap {
+    width:100vw;
+    height:100vh;
+    overflow:hidden !important;
+    display:grid;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "anime head" "anime body" "anime graph" "foot foot";
+    grid-template-rows: 1fr 2fr 5fr 1fr;
+    grid-template-columns: 5fr 5fr;
+    background-color: var(--main-bg-color);
+    grid-gap:5vh;
+}
+
+
+.b-head {
+    width:95%;
+    grid-area:head;
+    height:95%;
+    margin-top: 4%;
+    background-color: black;
+    border-radius: 10px;
+    margin-right: 5%;
+    font-size: 4vh !important;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-graph {
+    width:95%;
+    grid-area: graph;
+    margin-right: 5%;
+    height:95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.b-graph-el {
+    width:95%;
+    height:95%;
+}
+
+.b-anim {
+    width:auto;
+    grid-area: anime;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    margin-top:5vh;
+    margin-left:5vh;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.b-an {
+    width: auto;
+    height:100%;
+}
+
+.b-body {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-nav {
+    width:95%;
+    height:30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-nav-el {
+    padding:10px;
+    margin-right:10px;
+    border-radius: 10px;
+    font-size: 2vh;
+    border:solid 1px white;
+}
+
+.b-text {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

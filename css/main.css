@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand');
+
+:root {
+    --main-bg-color-dark: linear-gradient(125.12deg, #133f3b 0%,#331153 50%, #00000a 100.26%);
+    --main-bg-color-light: linear-gradient(125.12deg, #f2f7f6 0%,#c49ee7 50%, #9e9eee 100.26%);
+    --main-bg-color: rgb(15, 15, 15);
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    margin: 0px;
+    height: 100vh;
+    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    text-decoration: none;
+    color:aqua;
+}
+
+a:active {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: aquamarine;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    background: black;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: rgb(32, 88, 172);
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: var(--button-color-v2);
+}
+
+.foot-wrap {
+    width:100%;
+    grid-area:foot;
+    height:auto;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar {
+    height:5vw;
+    display: flex;
+    justify-content: flex-start;
+    width:70%;
+    align-items: center;
+}
+
+.navel {
+    height:4vw;
+    width:4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:solid 1px white;
+    border-radius: 5px;
+    margin:5px;
+}
+
+.navel:hover {
+    background-color:rgba(255, 255, 255, 0.2);
+}

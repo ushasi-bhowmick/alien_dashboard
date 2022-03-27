@@ -1,0 +1,58 @@
+<!--trying out plotly graphing to get transit signatures and all-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data</title>
+    <link rel="stylesheet" href="css/data.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/b629a77575.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<!--lets see if Ive got the guts to pull this off-->
+
+<body>
+<div id="data-js-area">
+    <div class="d-wrap">
+      <div class="d-anim">
+        <div id="myPlot" class="d-an"></div>
+      </div>
+      <div class="d-head">
+          T H E O R E T I C A L <br>
+          2-D     O B J E C T S
+      </div>
+      <div class="d-text">
+          <div class="d-parwrap" id='box0' @click="choose_plot(0)">Circle</div>
+          <div class="d-parwrap" id='box1' @click="choose_plot(1)">Eccentric</div>
+          <div class="d-parwrap" id='box2' @click="choose_plot(2)">Limb + Circle</div>
+          <div class="d-parwrap" id='box3' @click="choose_plot(3)">Limb + Eccentric</div>
+      </div>
+  
+      <div class="foot-wrap">
+        <div class="navbar">
+            <div class="navel"><a href="transits.html">Tr</a></div>
+            <div class="navel"><a href="method.html">Mth</a></div>
+            <div class="navel"><a href="basicsim.html">Mth</a></div>
+            <div class="navel"><a href="data.html">D</a></div>
+            <div class="navel"><a href="search.html">lk</a></div>
+            <div class="navel"><a href="megs.html">Mg</a></div>
+            <div class="navel" onclick="openFullscreen();">F</div>
+            <div class="navel" onclick="closeFullscreen();">nF</div>
+        </div>
+        <button class="d-next">Go</button>
+    </div>
+</div>
+
+</div>
+<script src='js/data.js' type="text/javascript"></script>
+</body>
