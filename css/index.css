@@ -69,16 +69,16 @@
 }
 
 .i-title {
-    width:40%;
-    height:15%;
+    width:45%;
+    height:60%;
     border-radius: 10px;
     display: flex;
     font-family: 'Quicksand', sans-serif;
-    backdrop-filter: blur(5px);
+    background:radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 1) 6%, rgba(0, 0, 0, 0.75) 50%, rgba(10, 10, 10, 0.0) 78%, rgba(0, 0, 0, 0) 100%);
+
     justify-content: center;
     align-items: center;
     font-size: 6vh;
-    background-color: rgba(0,0,0, 0.6);
     color: white;
 }
 
@@ -87,8 +87,9 @@
     height:80%;
     background-image:linear-gradient(to right,rgba(0,0,0,1),rgba(0,0,0,0.7),rgba(0,0,0,0.0));
     display: flex;
-    color:white !important;
+    border-left: solid 3px aqua;
     border-radius: 10px;
+    color:white !important;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;

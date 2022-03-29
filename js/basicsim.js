@@ -81,9 +81,9 @@ var sims = new Vue({
                     pad: 4
                 },
                 grid:{rows:1, columns:1,pattern: 'independent',roworder: ' top to bottom', ygap:0.2},
-                xaxis: {range: [Math.min(frm), Math.max(frm)], showgrid: false, showline:true,
+                xaxis: {range: [Math.min(frm), Math.max(frm)],title: "phase(pi)",  showgrid: false, showline:true,
                      mirror: true},
-                yaxis: {range: [1.1*Math.min(fl),1.1*Math.max(fl)], title: "Price in Millions", showgrid: false ,
+                yaxis: {range: [1.1*Math.min(fl),1.1*Math.max(fl)], title: "Flux", showgrid: false ,
                 showline:true, mirror: true}, 
                 font:{family:"Open Sans", color:"#CCCCCC"},
                 plot_bgcolor:"black",

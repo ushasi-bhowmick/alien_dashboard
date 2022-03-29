@@ -1,0 +1,141 @@
+@import "main.css";
+
+.r-wrap {
+    width:100vw;
+    height:100vh;
+    overflow:hidden !important;
+    display:grid;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "head" "img" "txt" "foot";
+    grid-template-rows: 1fr 6fr 1fr 1fr;
+    background-color: var(--main-bg-color);
+    grid-gap:5vh;
+}
+
+.r-head {
+    width:90%;
+    height:90%;
+    margin-top:5vh;
+    margin-left:5%;
+    grid-area:head;
+    background-color: black;
+    border-radius: 10px;
+    font-size: 4vh !important;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.r-pic1 {
+    width:70%;
+    height:100%;
+    overflow: hidden;
+    background-image: url("../images/fprez_result2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.r-pic2 {
+    width: 95%;
+    height: 85%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-image: url("../images/fprez_segarch.png");
+    background-size: contain;
+}
+
+.r-prev {
+    grid-area: img;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.r-text {
+    grid-area: txt;
+    width:100vw;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.r-im {
+    width:30%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.r-im-l {
+    width:27%;
+    height: 95%;
+    border-radius: 10px;
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 2fr 2fr 2fr;
+    grid-template-columns: 3fr 3fr;
+}
+
+.r-gif {
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+}
+
+.r-tb-g {
+    border-radius: 10px;
+    padding:10px;
+    height:60%;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px green;
+}
+
+.r-tb-r {
+    border-radius: 10px;
+    padding:10px;
+    height:60%;
+    margin:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px red;
+}
+
+.triangle {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid green;
+}
+
+.r-bye {
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    display: none;
+    background-color:rgba(0,0,0,0.8);
+    color: white;
+    backdrop-filter: blur(10px);
+    transform: translate(0,-100vh);
+    justify-content: center;
+    align-items: center;
+}

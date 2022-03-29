@@ -23,7 +23,7 @@ var data = new Vue({
         $('#box2').removeClass('s-par-on');
         this.lims=0.02;
         this.hd="Confirmed Planet";
-        this.rpl=0.2;this.rorb=4.45; this.u1=0.3; this.u2=0.4; this.b=0.11;
+        this.rpl=0.1168;this.rorb=11.6; this.u1=0.53; this.u2=0.15; this.b=0.602;
         this.run_plot('csv/fprez_5359701.csv',0.02)
       }
 
@@ -34,7 +34,7 @@ var data = new Vue({
         $('#box2').removeClass('s-par-on');
         this.lims=0.2;
         this.hd="Possible Eclipsing Binary";
-        this.rpl=0.2;this.rorb=4.45; this.u1=0.3; this.u2=0.4; this.b=0.11;
+        this.rpl=0.2;this.rorb=6.73; this.u1=0.3975; this.u2=0.2650; this.b=0;
         this.run_plot('csv/fprez_8110757.csv',0.2)
 
       }
@@ -46,7 +46,7 @@ var data = new Vue({
         $('#box0').removeClass('s-par-on');
         this.lims=0.06;
         this.hd="Confirmed Eclipsing Binary";
-        this.rpl=0.2;this.rorb=4.45; this.u1=0.3; this.u2=0.4; this.b=0.11;
+        this.rpl="0.04,0.03,0.002";this.rorb="24.4,17.7,51.52"; this.u1=0.29; this.u2=0.0; this.b=0;
         this.run_plot('csv/fprez_6372268.csv',0.1)
 
       }
@@ -71,7 +71,7 @@ var data = new Vue({
       x:frm,
       y:fl,
       mode:"lines",
-      name:"fl",
+      name:"flux",
       row:1,
       col:2,
       line: {color: '#77dd77', width: 2, shape: 'spline'}
@@ -80,7 +80,7 @@ var data = new Vue({
       x:frm.slice(0,parseInt((frm.length/2))),
       y:fl.slice(0,parseInt((frm.length/2))),
       mode:"lines",
-      name:"fl",
+      name:"flux",
       xaxis: 'x2',
       yaxis: 'y2',
       row:1,
@@ -105,7 +105,7 @@ var data = new Vue({
       row:1,
       col:1,
       mode:"lines",
-      name:"Res",
+      name:"model",
       line: {color: '#00693e', width: 2, shape: 'spline'}
 
     } 
@@ -117,7 +117,7 @@ var data = new Vue({
       xaxis: 'x2',
       yaxis: 'y2',
       mode:"lines",
-      name:"Res",
+      name:"model",
       line: {color: '#00693e', width: 2, shape: 'spline'}
 
     } 
@@ -136,11 +136,11 @@ var data = new Vue({
       xaxis: {range: [Math.min(frm), Math.max(frm)], showgrid: false, showline:true, mirror: true, domain:[0,1]},
       yaxis: {range: [1.1*Math.min(fl),1.1*Math.max(fl)], title: "Flux", showgrid: false ,
          showline:true, mirror: true, domain:[0.55,1]}, 
-      xaxis2: {range: [-lims, lims], title: "Phase", showgrid: false, showline:true, 
+      xaxis2: {range: [-lims, lims], title: "Phase(pi)", showgrid: false, showline:true, 
         mirror: true, domain:[0,0.43]},
       yaxis2: {range: [1.1*Math.min(fl),1.1*Math.max(fl)], title: "Flux", showgrid: false , 
         showline:true, mirror: true, domain:[0,0.45]}, 
-      xaxis3: {range: [-lims, lims], title: "Phase", showgrid: false,
+      xaxis3: {range: [-lims, lims], title: "Phase(pi)", showgrid: false,
        showline:true, mirror: true, domain:[0.57,1], anchor:'x3'},
       yaxis3: {range: [1.1*Math.min(res),1.1*Math.max(res)], title: "Flux-Model", showgrid: false , 
           showline:true, mirror: true, domain:[0,0.45], anchor:'y3'}, 

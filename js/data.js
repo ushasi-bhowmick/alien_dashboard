@@ -72,7 +72,7 @@ var data = new Vue({
         for(i=0;i<rows.length;i++) {
           d2.push(parseFloat(rows[i]['2d']))
           d3.push(parseFloat(rows[i]['3d']))
-          frm.push(parseFloat(rows[i]['#frame']))
+          frm.push(parseFloat(rows[i]['#frame'])/3.1415)
           res.push(parseFloat(rows[i]['2d'])-parseFloat(rows[i]['3d']))
         }
       
@@ -111,7 +111,7 @@ var data = new Vue({
       xaxis: {range: [Math.min(frm), Math.max(frm)], showgrid: false, showline:true, mirror: true},
       yaxis: {range: [1.1*Math.min(d2),1.1*Math.max(d2)], title: "Flux", showgrid: false ,
          showline:true, mirror: true}, 
-      xaxis2: {range: [Math.min(frm), Math.max(frm)], title: "Phase", showgrid: false, showline:true, mirror: true},
+      xaxis2: {range: [Math.min(frm), Math.max(frm)], title: "Phase(pi)", showgrid: false, showline:true, mirror: true},
       yaxis2: {range: [1.1*Math.min(res),1.1*Math.max(res)], title: "Flux-Model", showgrid: false , 
         showline:true, mirror: true}, 
       title: "Transit of 2D vs 3D objects",

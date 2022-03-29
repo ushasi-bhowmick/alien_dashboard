@@ -1,0 +1,95 @@
+@import "main.css";
+
+.p-wrap {
+    width:100vw;
+    height:100vh;
+    overflow:hidden !important;
+    display:grid;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas: "head head" "one two" "foot foot";
+    grid-template-rows: 1fr 7fr 1fr;
+    background-color: var(--main-bg-color);
+    grid-template-columns: 2fr 4fr;
+    grid-gap:5vh;
+}
+
+.p-head {
+    width:90%;
+    height:90%;
+    margin-top:5vh;
+    margin-left:5%;
+    grid-area:head;
+    background-color: black;
+    border-radius: 10px;
+    font-size: 4vh !important;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-one {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: one;
+}
+
+.p-two {
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    grid-area: two;
+}
+
+.p-subhead {
+    width:100%;
+    height:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.p-graph {
+    width:95%;
+    height:90%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-graph-2 {
+    width:95%;
+    height:80%;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-lab {
+    width:95%;
+    height:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vh;
+}
+
+
+.p-graph-el{
+    width:95%;
+    height:95%;
+}

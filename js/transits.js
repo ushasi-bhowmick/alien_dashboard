@@ -71,7 +71,7 @@ var transit = new Vue({
                     pad: 4
                 },
                 grid:{rows:1, columns:1,pattern: 'independent',roworder: ' top to bottom', ygap:0.2},
-                xaxis: {range: [Math.min(frm), Math.max(frm)], title:"Phase" ,showgrid: false, showline:true,
+                xaxis: {range: [Math.min(frm), Math.max(frm)], title:"Phase(pi)" ,showgrid: false, showline:true,
                      mirror: true},
                 yaxis: {range: [1.1*Math.min(d2),1.1*Math.max(d2)], title: "Flux", showgrid: false ,
                 showline:true, mirror: true}, 
@@ -92,14 +92,22 @@ var transit = new Vue({
 	},
 
 	mounted() {
+        console.log('here');
+        this.run_plot('csv/2d3d_0.2R_circ_corr.csv');
+
         window.addEventListener('keydown', (e) => {
-            if (e.key == 6) {
+            if (e.key == 'l') {
               console.log('click');
+              this.choose_animation(2);
             }
+
+            if (e.key == 'e') {
+                console.log('click');
+                this.choose_animation(3);
+              }
         });
 
-		console.log('here');
-        this.run_plot('csv/2d3d_0.2R_circ_corr.csv');
+		
 		
 	},
 
