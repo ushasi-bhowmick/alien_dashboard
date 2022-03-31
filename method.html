@@ -35,22 +35,32 @@
                     <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
                       <path d="M0,0 L0,6 L9,3 z" fill="#f00" />
                     </marker>
-                  </defs> 
+
+                </defs> 
                   
                 <clipPath id="clip1">
-                    <circle v-if="!odd" :cx="x" :cy="y" r="40"/>
-                    <polygon v-if="odd" :points="move_poly" />
+                    <circle v-if="odd==0||odd==2" :cx="x" :cy="y" r="40"/>
+                    <polygon v-if="odd==1" :points="move_poly" />
                 </clipPath>
-                <circle v-if="!odd" :cx="x" :cy="y" r="40" fill="white" stroke="#333333"/>
-                <polygon v-if="odd" :points="move_poly" fill="white" stroke="#333333"/>
+                <clipPath id="clip2">
+                    <circle v-if="odd==2" :cx="x" :cy="y" r="20"/>
+                </clipPath>
+                <circle v-if="odd==0||odd==2" :cx="x" :cy="y" r="40" fill="white" stroke="#333333"/>
+                <circle v-if="odd==2" :cx="x" :cy="y" r="20" fill="black" stroke="#333333"/>
+                <polygon v-if="odd==1" :points="move_poly" fill="white" stroke="#333333"/>
                 <circle v-if="!jt" :cx="ccx" :cy="ccy" r="150" fill="#222222" stroke="#333333"/>
-                <circle v-if="!jt" clip-path="url('#clip1')" :cx="ccx" :cy="ccy" r="150" fill="#8080ff" stroke="#000080"/> 
+                <circle v-if="!jt" clip-path="url('#clip1')" :cx="ccx" :cy="ccy" r="150" fill="#8080ff" stroke="#000080"/>
+                 
                 
                 <circle v-if="dot" v-for="el in pts" :cx='el.x'  :cy='el.y' r="2" fill="#2d7f9d"/>
                 <circle v-if="dot" clip-path="url('#clip1')" v-for="el in pts" :cx='el.x'  :cy='el.y' r="3" fill="#ce2029"/>
                 <circle v-if="ldot" v-for="el in ldpts" :cx='el.x'  :cy='el.y' r="2" fill="#2d7f9d"/>
                 <circle v-if="ldot" clip-path="url('#clip1')" v-for="el in ldpts" :cx='el.x'  :cy='el.y' r="3" fill="#ce2029"/>
                 
+                <circle v-if="!jt&& odd==2" clip-path="url('#clip2')" :cx="ccx" :cy="ccy" r="150" fill="#222222" stroke="#000080"/>
+                <circle v-if="dot && odd==2" clip-path="url('#clip2')" v-for="el in pts" :cx='el.x'  :cy='el.y' r="2" fill="#2d7f9d"/>
+                <circle v-if="ldot&&odd==2" clip-path="url('#clip2')" v-for="el in ldpts" :cx='el.x'  :cy='el.y' r="2" fill="#2d7f9d"/>
+
                 <line v-if="jt" x1="200" y1="200" x2="450" y2="450" stroke="#555" stroke-width="2" marker-end="url(#arrow)" />
                 <circle v-if="jt" cx="200" cy="200" r="5" fill="blue"/>
             </svg>

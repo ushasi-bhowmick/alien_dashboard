@@ -35,9 +35,14 @@
             <div class="b-nav-el" id="box1" @click="choose_plot(1)">Planets</div>
             <div class="b-nav-el" id="box2" @click="choose_plot(2)">2D Stuff</div>
         </div>
-        <div class="b-text">
+        <div class="b-text" v-if="this.now!=1">
             Mandel and Algol 2002 <br>
             <p>R<sub>pl</sub>=0.1R<sub>st</sub>, R<sub>orb</sub>=2R<sub>st</sub>,
+                b=0 ,u<sub>1</sub>=0, u<sub>2</sub>=0, e=0</p>
+        </div>
+        <div class="b-text" v-if="this.now==1">
+            Mandel and Algol 2002 <br>
+            <p>R<sub>pl</sub>=0.2,0.1,0.25 R<sub>st</sub>, R<sub>orb</sub>=2,4,4.5R<sub>st</sub>,
                 b=0 ,u<sub>1</sub>=0, u<sub>2</sub>=0, e=0</p>
         </div>
     </div>

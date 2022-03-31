@@ -23,7 +23,7 @@ var data = new Vue({
         $('#box2').removeClass('s-par-on');
         this.lims=0.02;
         this.hd="Confirmed Planet";
-        this.rpl=0.1168;this.rorb=11.6; this.u1=0.53; this.u2=0.15; this.b=0.602;
+        this.rpl=0.11;this.rorb=11.19; this.u1=0.53; this.u2=0.15; this.b=0.602;
         this.run_plot('csv/fprez_5359701.csv',0.02)
       }
 
@@ -34,7 +34,7 @@ var data = new Vue({
         $('#box2').removeClass('s-par-on');
         this.lims=0.2;
         this.hd="Possible Eclipsing Binary";
-        this.rpl=0.2;this.rorb=6.73; this.u1=0.3975; this.u2=0.2650; this.b=0;
+        this.rpl=0.037;this.rorb=3.5193; this.u1=0.3975; this.u2=0.2650; this.b=0;
         this.run_plot('csv/fprez_8110757.csv',0.2)
 
       }

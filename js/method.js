@@ -40,6 +40,7 @@ var meth = new Vue({
              },
 
              choose_bar(i) {
+                console.log(this.odd);
                 if(i==0) {
                     this.odd=0; this.dot=0; this.jt=0;
                     $('#nav0').addClass('m-nav-el-on');
@@ -49,7 +50,8 @@ var meth = new Vue({
                 }
 
                 if(i==1) {
-                    this.odd = 1-this.odd;
+                    this.odd ++;
+                    if(this.odd==3) this.odd=0;
                     if(this.odd) $('#nav1').addClass('m-nav-el-on');
                     else $('#nav1').removeClass('m-nav-el-on') ;
                     $('#nav0').removeClass('m-nav-el-on');

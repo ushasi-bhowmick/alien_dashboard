@@ -28,10 +28,18 @@
         <div id="myPlot" class="d-an"></div>
       </div>
       <div class="d-head">
-          T H E O R E T I C A L <br>
-          2-D     O B J E C T S
+          T H E O R E T I C A L &nbsp;
+          2-D  &nbsp;   O B J E C T S
       </div>
       <div class="d-text">
+          <div v-if="now==0"><p>R<sub>pl</sub>=0.1R<sub>st</sub>, R<sub>orb</sub>=2R<sub>st</sub>,
+            b=0 ,u<sub>1</sub>=0, u<sub>2</sub>=0, e=0</p></div>
+          <div v-if="now==1"><p>R<sub>pl</sub>=0.1R<sub>st</sub>, R<sub>orb</sub>=2R<sub>st</sub>,
+            b=0 ,u<sub>1</sub>=0, u<sub>2</sub>=0, e=0.3</p></div>
+          <div v-if="now==2"><p>R<sub>pl</sub>=0.1R<sub>st</sub>, R<sub>orb</sub>=2R<sub>st</sub>,
+            b=0 ,u<sub>1</sub>=0.6, u<sub>2</sub>=0, e=0</p></div>
+          <div v-if="now==3"><p>R<sub>pl</sub>=0.1R<sub>st</sub>, R<sub>orb</sub>=2R<sub>st</sub>,
+                b=0 ,u<sub>1</sub>=0.6, u<sub>2</sub>=0, e=0.3</p></div>
           <div class="d-parwrap" id='box0' @click="choose_plot(0)">Circular</div>
           <div class="d-parwrap" id='box1' @click="choose_plot(1)">Eccentric</div>
           <div class="d-parwrap" id='box2' @click="choose_plot(2)">Limb + Circular</div>

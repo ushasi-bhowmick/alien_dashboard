@@ -3,7 +3,9 @@ var transit = new Vue({
 
 	data: {
         animpath:"images/letsgo.gif",
-        sel:[1,1,0,0]
+        sel:[1,1,0,0],
+        u1:0,
+        e:0
 	},
 
 	methods: {
@@ -21,18 +23,22 @@ var transit = new Vue({
         load_animation() {
             if(this.sel[0] && this.sel[1] && !this.sel[2] && !this.sel[3]) {
                 this.animpath="images/letsgo.gif"; 
+                this.u1=0; this.e=0;
                 this.run_plot('csv/2d3d_0.2R_circ_corr.csv');
             }
             else if(this.sel[0] && this.sel[1] && this.sel[2] && !this.sel[3]) {
                 this.animpath="images/letsgo.gif";
+                this.u1=0.6; this.e=0;
                 this.run_plot('csv/2d3d_0.2R_limb_circ_corr.csv');
             }
             else if(this.sel[0] && this.sel[1] && !this.sel[2] && this.sel[3]) {
                 this.animpath="images/letsgo4.gif";
+                this.u1=0; this.e=0.3;
                 this.run_plot('csv/2d3d_0.2R_kep_corr.csv');
             }
             else if(this.sel[0] && this.sel[1] && this.sel[2] && this.sel[3]) {
                 this.animpath="images/letsgo4.gif";
+                this.u1=0.6; this.e=0.3;
                 this.run_plot('csv/2d3d_0.2R_limb_kep_corr.csv');
             }
         },
