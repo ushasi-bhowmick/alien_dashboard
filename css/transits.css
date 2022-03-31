@@ -29,6 +29,8 @@
     border-radius: 10px;
 }
 
+
+
 .t-graph {
     height:40%;
     width:100%;
@@ -67,12 +69,12 @@
     justify-content: center;
     align-items: center;
     height:100%;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     border: solid 1px white;
     cursor:pointer;
-    margin-top:3vh;
-    margin-bottom: 3vh;
+    margin-top:1vh;
+    margin-bottom: 1vh;
 }
 
 .t-parwrap:hover {
@@ -84,9 +86,24 @@
     border: solid 1px white;
 }
 
+.t-anim-sub {
+    width:100%;
+    height:57%;
+    display: flex;
+}
+
 .t-an {
     width: auto;
-    height:57%;
+    height:100%;
+}
+
+.t-anim-par {
+    width:20%;
+    display: flex;
+    font-size: 2vh;
+    align-items:flex-end;
+    height:100%;
+
 }
 
 

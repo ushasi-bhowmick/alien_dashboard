@@ -3,7 +3,7 @@
 :root {
     --main-bg-color-dark: linear-gradient(125.12deg, #133f3b 0%,#331153 50%, #00000a 100.26%);
     --main-bg-color-light: linear-gradient(125.12deg, #f2f7f6 0%,#c49ee7 50%, #9e9eee 100.26%);
-    --main-bg-color: rgb(15, 15, 15);
+    --main-bg-color: rgb(30,30,30);
     
 }
 
@@ -81,8 +81,8 @@ a:visited {
 }
 
 .navel {
-    height:4vw;
-    width:4vw;
+    height:3vw;
+    width:3vw;
     display: flex;
     justify-content: center;
     align-items: center;

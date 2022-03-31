@@ -26,32 +26,44 @@
 
 <div class="t-wrap">
     <div class="t-anim">
-        <img class="t-an" :src="animpath"></img>
+        <div class="t-anim-sub">
+            <img class="t-an" :src="animpath"></img>
+            <div class="t-anim-par">
+                <p>R<sub>pl</sub>=0.1R<sub>st</sub> <br>
+                R<sub>orb</sub>=2R<sub>st</sub> <br>
+                b=0 <br>
+                u<sub>1</sub>=0 <br>
+                u<sub>2</sub>=0 <br>
+                e=0</p>
+            </div>
+        </div>
         <div class="t-graph" id="myPlot"></div>
     </div>
     <div class="t-head">
         T R A N S I T S
     </div>
     <div class="t-text">
-        <div class="t-parwrap t-par-on">Rstar/ Rpl</div>
-        <div class="t-parwrap t-par-on">Time Period</div>
+        <div class="t-parwrap t-par-on">Epoch & Time Period</div>
+        <div class="t-parwrap t-par-on">Rpl / Rstar</div>
+        <div class="t-parwrap t-par-on">Rorb / Rstar</div>
+        <div class="t-parwrap t-par-on">Impact Parameter</div>
         <div class="t-parwrap" id="box2" @click="choose_animation(2)">Limb darkening</div>
         <div class="t-parwrap" id="box3" @click="choose_animation(3)">Eccentricity</div>
     </div>
 
     <div class="foot-wrap">
-      <button class="next" onclick="location.href='recap.html';"><i class="fas fa-solid fa-chevron-left"></i></button>
+      <button class="next" onclick="location.href='motivation.html';"><i class="fas fa-solid fa-chevron-left"></i></button>
       <div class="navbar">
-          <div class="navel"><a href="index.html"><i class="fa fa-home"></i></a></div>
-          <div class="navel"><a href="recap.html"><i class="fa fa-clock-o"></i></a></div>
-          <div class="navel nav-active"><a href="transits.html"><i class="fas fa-solid fa-star"></i></a></div>
-          <div class="navel"><a href="method.html"><i class="fas fa-solid fa-network-wired"></i></a></div>
-          <div class="navel"><a href="basicsim.html"><i class="fas fa-solid fa-film"></i></a></div>
-          <div class="navel"><a href="data.html"><i class="fas fa-solid fa-scroll"></i></a></div>
-          <div class="navel"><a href="possible.html"><i class="fa fa-signal"></i></a></div>
-          <div class="navel"><a href="search.html"><i class="fas fa-search"></i></a></div>
-          <div class="navel"><a href="megs.html"><i class="fas fa-solid fa-city"></i></a></div>
-          
+        <div class="navel"><a href="index.html"><i class="fa fa-home"></i></a></div>
+        <div class="navel"><a href="recap.html"><i class="fa fa-clock-o"></i></a></div>
+        <div class="navel"><a href="motivation.html"><i class="fa-solid fa-microchip"></i></a></div>
+        <div class="navel nav-active"><a href="transits.html"><i class="fa-solid fa-star"></i></a></div>
+        <div class="navel"><a href="method.html"><i class="fa-solid fa-hammer"></i></a></div>
+        <div class="navel"><a href="basicsim.html"><i class="fa-solid fa-film"></i></a></div>
+        <div class="navel"><a href="data.html"><i class="fa-solid fa-wave-square"></i></a></div>
+        <div class="navel"><a href="possible.html"><i class="fa fa-signal"></i></a></div>
+        <div class="navel"><a href="search.html"><i class="fas fa-search"></i></a></div>
+        <div class="navel"><a href="megs.html"><i class="fas fa-solid fa-city"></i></a></div>
       </div>
       <div class="credits">Made by: Ushasi Bhowmick</div>
       <button class="next" onclick="location.href='method.html';"><i class="fas fa-solid fa-chevron-right"></i></button>
@@ -64,7 +76,7 @@
 <script>
   function leftArrowPressed() {
       console.log("left");
-      location.href='recap.html';
+      location.href='motivation.html';
   }
 
   function rightArrowPressed() {

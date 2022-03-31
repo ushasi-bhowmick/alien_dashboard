@@ -66,6 +66,7 @@
     width:4vw;
     height:4vw;
     margin-left: 3vh;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;

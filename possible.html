@@ -32,20 +32,28 @@
     <div class="p-head">
         C A N &nbsp; W E &nbsp; D E T E C T &nbsp; T H I S ?
     </div>
-    <div class="p-one">
+    <!--<div class="p-one">
         <div class="p-subhead">Significance</div>
         <div class="p-graph" ><div class="p-graph-el" id="myPlot"></div></div>
+    </div>-->
+    <div class="p-one">
+        <div class="p-tab">
+            <div class="p-tab-el" id="box0" @click="choose_plot(0)"></div>
+            <div class="p-tab-el" id="box1" @click="choose_plot(1)"></div>
+            <div class="p-tab-el" id="box2" @click="choose_plot(2)"></div>
+        </div>
+
+        <div class="p-text">Fit a 2D structure with 3D model</div>
+
+       
+        <div class="p-slide">
+            Noisebar:<br>
+            <input type="range" min=0 max=9 step=1 v-model="val" class="p-slider" id="myRange" @input="choose_plot(1)">
+        </div>
     </div>
 
     <div class="p-two">
-        <div class="p-subhead">
-            Degeneracies
-        </div>
-        <div class="p-graph-2" ><div class="p-graph-el" id="myPlot2"></div></div>
-        <div class="p-lab">
-          2D:  Rorb=2.00 &nbsp; Rpl=0.0967 &nbsp; u1=0.1794 &nbsp; u2=0.0 <br>
-          3D:  Rorb=2.00 &nbsp; Rpl=0.1000 &nbsp; u1=0.0000 &nbsp; u2=0.0 <br>
-        </div>
+        <div class="p-graph-2" ><div class="p-graph-el" id="myPlot"></div></div>
     </div>
 
     <div class="foot-wrap">
@@ -53,10 +61,11 @@
         <div class="navbar">
             <div class="navel"><a href="index.html"><i class="fa fa-home"></i></a></div>
             <div class="navel"><a href="recap.html"><i class="fa fa-clock-o"></i></a></div>
-            <div class="navel"><a href="transits.html"><i class="fas fa-solid fa-star"></i></a></div>
-            <div class="navel"><a href="method.html"><i class="fas fa-solid fa-network-wired"></i></a></div>
-            <div class="navel"><a href="basicsim.html"><i class="fas fa-solid fa-film"></i></a></div>
-            <div class="navel"><a href="data.html"><i class="fas fa-solid fa-scroll"></i></a></div>
+            <div class="navel"><a href="motivation.html"><i class="fa-solid fa-microchip"></i></a></div>
+            <div class="navel"><a href="transits.html"><i class="fa-solid fa-star"></i></a></div>
+            <div class="navel"><a href="method.html"><i class="fa-solid fa-hammer"></i></a></div>
+            <div class="navel"><a href="basicsim.html"><i class="fa-solid fa-film"></i></a></div>
+            <div class="navel"><a href="data.html"><i class="fa-solid fa-wave-square"></i></a></div>
             <div class="navel nav-active"><a href="possible.html"><i class="fa fa-signal"></i></a></div>
             <div class="navel"><a href="search.html"><i class="fas fa-search"></i></a></div>
             <div class="navel"><a href="megs.html"><i class="fas fa-solid fa-city"></i></a></div>
