@@ -46,7 +46,7 @@
         <div class="p-text">Fit a 2D structure with 3D model</div>
 
        
-        <div class="p-slide">
+        <div v-if="this.now==1" class="p-slide">
             Noisebar:<br>
             <input type="range" min=0 max=9 step=1 v-model="val" class="p-slider" id="myRange" @input="choose_plot(1)">
         </div>

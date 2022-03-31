@@ -28,7 +28,7 @@ var data = new Vue({
             }
 
             else {
-                this.now=1;
+                this.now=2;
                 $('#box2').addClass('p-par-on');
                 $('#box0').removeClass('p-par-on');
                 $('#box1').removeClass('p-par-on');
