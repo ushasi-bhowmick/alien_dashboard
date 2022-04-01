@@ -112,7 +112,7 @@ var data = new Vue({
       yaxis: {range: [1.1*Math.min(d2),1.1*Math.max(d2)], title: "Flux", showgrid: false ,
          showline:true, mirror: true}, 
       xaxis2: {range: [Math.min(frm), Math.max(frm)], title: "Phase(pi)", showgrid: false, showline:true, mirror: true},
-      yaxis2: {range: [1.1*Math.min(res),1.1*Math.max(res)], title: "Flux-Model", showgrid: false , 
+      yaxis2: {range: [1.1*Math.min(res),1.1*Math.max(res)], title: "2D-3D", showgrid: false , 
         showline:true, mirror: true}, 
       title: "Transit of 2D vs 3D objects",
       font:{family:"Open Sans", color:"#CCCCCC"},

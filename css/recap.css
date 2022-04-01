@@ -22,7 +22,7 @@
     grid-area:head;
     background-color: black;
     border-radius: 10px;
-    font-size: 4vh !important;
+    font-size: 5vh !important;
     font-family: 'Quicksand', sans-serif;
     display: flex;
     justify-content: center;
@@ -30,11 +30,35 @@
 
 }
 
+.r-im {
+    width:27%;
+    height: 95%;
+    display: flex;
+    margin-left:10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.r-im-l {
+    width:27%;
+    height: 95%;
+    border-radius: 10px;
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 2fr 2fr 2fr;
+    grid-template-columns: 3fr 3fr;
+}
+
 .r-pic1 {
-    width:70%;
-    height:100%;
+    width:95%;
+    height:95%;
     overflow: hidden;
-    background-image: url("../images/fprez_result2.png");
+    background-image: url("../images/fprez_tmep.png");
     background-size: contain;
     background-repeat: no-repeat;
 
@@ -45,7 +69,7 @@
     height: 85%;
     overflow: hidden;
     background-repeat: no-repeat;
-    background-image: url("../images/fprez_segarch.png");
+    background-image: url("../images/neural-networks.jpg");
     background-size: contain;
 }
 
@@ -67,27 +91,7 @@
     align-items: center;
 }
 
-.r-im {
-    width:30%;
-    height: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background-color: black;
-}
 
-.r-im-l {
-    width:27%;
-    height: 95%;
-    border-radius: 10px;
-    background-color: black;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-rows: 2fr 2fr 2fr;
-    grid-template-columns: 3fr 3fr;
-}
 
 .r-gif {
     width: 5%;

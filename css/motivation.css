@@ -1,19 +1,21 @@
 @import "main.css";
 
-.mot-wrap {
+.mot-wrap-back {
     width:100vw;
     height:100vh;
     overflow:hidden !important;
-    display:grid;
-    grid-template-areas:"nb1 leave" "txt leave" "foot foot";
-    grid-template-columns: 3fr 6fr;
-    grid-template-rows:5fr 3fr 1fr;
-    color:white;
-    background-image: url('../images/meg1.jpg');
+    
+    background-color: black;
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
     background-size: cover;
+}
+
+
+
+.mot-main {
+    grid-area: leave;
 }
 
 .mot-tab {
@@ -38,11 +40,13 @@
 }
 
 .mot-text {
-    grid-area: txt;
-    width:90%;
-    height:90%;
+    width:40vh;
+    height:30vh;
+    position:absolute;
     margin-left:5%;
+    transform: translate(0,-90vh);
     display: flex;
+    color: white;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -63,3 +67,10 @@
     
 }
 
+.foot-wrap-n {
+    width:100vw;
+    display: flex;
+    justify-content: space-around;
+    height:11vh;
+    transform: translate(0,-11vh);
+}

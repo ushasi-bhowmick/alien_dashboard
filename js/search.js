@@ -24,7 +24,7 @@ var data = new Vue({
         this.lims=0.02;
         this.hd="Confirmed Planet";
         this.rpl=0.11;this.rorb=11.19; this.u1=0.53; this.u2=0.15; this.b=0.602;
-        this.run_plot('csv/fprez_5359701.csv',0.02)
+        this.run_plot('csv/fprez_5359701.csv',0.02,0.0,[-0.001,0,0.001])
       }
 
       else if(i==1) {
@@ -35,7 +35,7 @@ var data = new Vue({
         this.lims=0.2;
         this.hd="Possible Eclipsing Binary";
         this.rpl=0.037;this.rorb=3.5193; this.u1=0.3975; this.u2=0.2650; this.b=0;
-        this.run_plot('csv/fprez_8110757.csv',0.2)
+        this.run_plot('csv/fprez_8110757.csv',0.2,0.5,[-0.002,0,0.0045])
 
       }
 
@@ -47,12 +47,12 @@ var data = new Vue({
         this.lims=0.06;
         this.hd="Confirmed Eclipsing Binary";
         this.rpl="0.04,0.03,0.002";this.rorb="24.4,17.7,51.52"; this.u1=0.29; this.u2=0.0; this.b=0;
-        this.run_plot('csv/fprez_6372268.csv',0.1)
+        this.run_plot('csv/fprez_6372268.csv',0.1,0.555,[-0.003,0,0.001])
 
       }
     },
 
-		run_plot(filename, lims) {
+		run_plot(filename, lims,linex,liney) {
       Plotly.d3.csv(filename, function (err, rows) {
         var fl = []
         var frm= []
@@ -66,12 +66,15 @@ var data = new Vue({
         }
 
         //Define Data
-        console.log(lims);
+        console.log(lims,fl);
+        console.log([1.1*Math.min(fl),1.1*Math.max(fl)]);
     var tracefl1 ={
       x:frm,
       y:fl,
       mode:"lines",
       name:"flux",
+      xaxis: 'x1',
+      yaxis: 'y1',
       row:1,
       col:2,
       line: {color: '#77dd77', width: 2, shape: 'spline'}
@@ -103,6 +106,8 @@ var data = new Vue({
       x:frm,
       y:mod,
       row:1,
+      xaxis: 'x1',
+      yaxis: 'y1',
       col:1,
       mode:"lines",
       name:"model",
@@ -121,7 +126,20 @@ var data = new Vue({
       line: {color: '#00693e', width: 2, shape: 'spline'}
 
     } 
-    var data = [tracefl1, tracem1, traceres, tracefl2, tracem2];
+
+    var trline = {
+      x:[linex,linex,linex],
+      y:liney,
+      row:1,
+      col:1,
+      xaxis: 'x1',
+      yaxis: 'y1',
+      mode:"lines",
+      name:"m",
+      showlegend: false,
+      line: {color: '#888888', width: 1, shape: 'spline'}
+    }
+    var data = [tracefl1, tracem1, traceres,trline, tracefl2, tracem2];
     
      //Define Layout
     var layout = {

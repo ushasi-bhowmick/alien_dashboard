@@ -43,11 +43,19 @@ var data = new Vue({
         var y2 = []
         var x2std= []
         var y2std=[]
+        var x3 = []
+        var y3 = []
+        var x3std= []
+        var y3std=[]
         var x1 = []
         var y1 = []
         var x1std= []
         var y1std=[]
         for(i=0;i<rows.length;i++) {
+          x3.push(parseFloat(rows[i]['0.05snr']))
+          y3.push(parseFloat(rows[i]['0.05peak']))
+          x3std.push(parseFloat(rows[i]['0.05snrvar']))
+          y3std.push(parseFloat(rows[i]['0.05pkvar']))
           x2.push(parseFloat(rows[i]['0.2snr']))
           y2.push(parseFloat(rows[i]['0.2peak']))
           x2std.push(parseFloat(rows[i]['0.2snrvar']))
@@ -73,10 +81,16 @@ var data = new Vue({
         mode:"lines+markers",
         name:"0.2R",
         line: {color: '#77dd77', width: 2, shape: 'spline'}
-
         } 
+        var trace3 ={
+            x:x3,
+            y:y3,
+            mode:"lines+markers",
+            name:"0.05R",
+            line: {color: '#7cfc00', width: 2, shape: 'spline'}
+         } 
     
-        var data = [trace1, trace2];
+        var data = [trace1, trace2, trace3];
     
         //Define Layout
         var layout = {
@@ -203,7 +217,7 @@ var data = new Vue({
             showline:true, mirror: true}, 
             xaxis3: {range: [Math.min(frm), Math.max(frm)],title:'phase(pi)', showgrid: false, showline:true,
                  mirror: true},
-            yaxis3: {range: [-0.0004,0.0004], title: "Flux", showgrid: false ,
+            yaxis3: {range: [-0.0004,0.0004], title: "Flux-Model", showgrid: false ,
             showline:true, mirror: true}, 
             xaxis2: {range: [Math.min(frm), Math.max(frm)], showgrid: false, showline:true,
                  mirror: true},

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>possible</title>
+    <title>Detection</title>
     <link rel="stylesheet" href="css/possible.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
 
 <div class="p-wrap">
     <div class="p-head">
-        C A N &nbsp; W E &nbsp; D E T E C T &nbsp; T H I S ?
+        <span>C A N &nbsp; W E &nbsp; D E T E C T </span> <span>&nbsp; T H I S ? </span>
     </div>
     <!--<div class="p-one">
         <div class="p-subhead">Significance</div>
@@ -51,9 +51,6 @@
                 b=0 ,u<sub>1</sub>=0.1794, u<sub>2</sub>=0, e=0</p>
         </div>
 
-        
-
-       
         <div v-if="this.now==1" class="p-slide">
             Noisebar:<br>
             <input type="range" min=0 max=9 step=1 v-model="val" class="p-slider" id="myRange" @input="choose_plot(1)">

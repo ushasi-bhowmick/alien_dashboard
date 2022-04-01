@@ -22,7 +22,7 @@
     grid-area:head;
     background-color: black;
     border-radius: 10px;
-    font-size: 4vh !important;
+    font-size: 5vh !important;
     font-family: 'Quicksand', sans-serif;
     display: flex;
     justify-content: center;
@@ -93,4 +93,17 @@
     border:solid 1px white;
     border-radius: 5px;
     margin:5px;
+}
+
+.r-bye {
+    width:100vw;
+    height:100vh;
+    position:absolute;
+    display: none;
+    background-color:rgba(0,0,0,0.8);
+    color: white;
+    backdrop-filter: blur(10px);
+    transform: translate(0,-100vh);
+    justify-content: center;
+    align-items: center;
 }
