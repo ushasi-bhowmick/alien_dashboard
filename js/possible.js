@@ -261,7 +261,7 @@ var data = new Vue({
             mode:"lines",
             xaxis: 'x1',
             yaxis: 'y1',
-            name:"flux",
+            name:temp_list[vl],
             marker: {color: '#77dd77', width: 3, shape: 'spline'}
   
         } ;
